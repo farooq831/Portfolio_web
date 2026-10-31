@@ -135,6 +135,31 @@
   const statProjects = $('#stat-projects');
   if (statProjects) statProjects.textContent = data.length;
 
+  /* ---------- Animated highlight counters ---------- */
+  const statObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.querySelectorAll('[data-count]').forEach((stat) => {
+        const target = Number(stat.dataset.count);
+        if (reduceMotion) {
+          stat.textContent = String(target);
+          return;
+        }
+        const started = performance.now();
+        const duration = 900;
+        const animate = (now) => {
+          const progress = Math.min((now - started) / duration, 1);
+          stat.textContent = String(Math.round(target * (1 - Math.pow(1 - progress, 3))));
+          if (progress < 1) window.requestAnimationFrame(animate);
+        };
+        window.requestAnimationFrame(animate);
+      });
+      obs.unobserve(entry.target);
+    });
+  }, { threshold: 0.6 });
+  const stats = $('.hero-stats');
+  if (stats) statObserver.observe(stats);
+
   const ICONS = {
     code: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg>',
     live: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>',
@@ -242,6 +267,21 @@
       card.addEventListener('pointerleave', () => {
         card.style.removeProperty('--tilt-x');
         card.style.removeProperty('--tilt-y');
+      });
+    });
+
+    document.querySelectorAll('.btn-primary, .btn-whatsapp').forEach((button) => {
+      button.classList.add('magnetic');
+      button.addEventListener('pointermove', (event) => {
+        const bounds = button.getBoundingClientRect();
+        const x = (event.clientX - bounds.left - bounds.width / 2) * 0.12;
+        const y = (event.clientY - bounds.top - bounds.height / 2) * 0.12;
+        button.style.setProperty('--mag-x', `${x}px`);
+        button.style.setProperty('--mag-y', `${y}px`);
+      });
+      button.addEventListener('pointerleave', () => {
+        button.style.removeProperty('--mag-x');
+        button.style.removeProperty('--mag-y');
       });
     });
   }
