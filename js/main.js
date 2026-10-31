@@ -227,6 +227,24 @@
     }, { once: true });
     probe.src = videoSrc;
   });
+  observeReveal(cards);
+
+  /* ---------- Project card tilt ---------- */
+  if (!reduceMotion && window.matchMedia('(pointer: fine)').matches) {
+    cards.forEach((card) => {
+      card.addEventListener('pointermove', (event) => {
+        const bounds = card.getBoundingClientRect();
+        const x = (event.clientX - bounds.left) / bounds.width;
+        const y = (event.clientY - bounds.top) / bounds.height;
+        card.style.setProperty('--tilt-x', `${(0.5 - y) * 7}deg`);
+        card.style.setProperty('--tilt-y', `${(x - 0.5) * 7}deg`);
+      });
+      card.addEventListener('pointerleave', () => {
+        card.style.removeProperty('--tilt-x');
+        card.style.removeProperty('--tilt-y');
+      });
+    });
+  }
 
   // Filters
   const categories = ['All', ...new Set(data.map((p) => p.category))];
