@@ -12,7 +12,7 @@ File names are **case-sensitive** on GitHub Pages. Copy them exactly as written 
 
 ---
 
-## 1. Screenshots still needed (6)
+## 1. Screenshots still needed (8)
 
 | File name | Project | What to capture |
 |---|---|---|
@@ -22,6 +22,8 @@ File names are **case-sensitive** on GitHub Pages. Copy them exactly as written 
 | `assets/images/Password-gererator-react.png` | Password Generator | Generator with a password showing |
 | `assets/images/Food-Ordering-System-DSA.png` | Food Ordering System (C++) | Console menu, cart and order queue |
 | `assets/images/leetcode-python.png` | LeetCode Python | Optional: a solution file, or leave the placeholder |
+| `assets/images/react.png` | React Practice Repository | A representative component or exercise |
+| `assets/images/react-code.png` | React Code Practice | A representative component or exercise |
 
 ## 2. Screenshots worth replacing (optional)
 
@@ -34,7 +36,7 @@ These come from the repos' own images or were auto-captured. Swap in better ones
 | `assets/images/automated-malware-analysis-forensics.png` | Upload page. A results/report page would look stronger |
 | `assets/images/Random-Dice-Roller.png`, `Simon-Game-Clone-.png`, `OTPgenerator.png`, `social-media-menu.png` | Auto-captured and fairly plain |
 
-## 3. Demo videos still needed (20)
+## 3. Demo videos still needed (22)
 
 Already included: `exam-question-bank.mp4`, `goodhand-marketplace.mp4`, `automated-malware-analysis-forensics.mp4`, `English-Dictionary.mp4`, `Temperature-converter.mp4`.
 
@@ -63,6 +65,8 @@ Already included: `exam-question-bank.mp4`, `goodhand-marketplace.mp4`, `automat
 - [ ] `assets/videos/OTPgenerator.mp4`
 - [ ] `assets/videos/Food-Ordering-System-DSA.mp4`
 - [ ] `assets/videos/leetcode-python.mp4` (can be skipped)
+- [ ] `assets/videos/react.mp4` (can be skipped)
+- [ ] `assets/videos/react-code.mp4` (can be skipped)
 
 ## Tips
 
