@@ -154,6 +154,9 @@
   if (featuredGrid) {
     featuredGrid.innerHTML = data.filter((p) => p.featured).slice(0, 3).map((p, i) => `
       <article class="card featured-card">
+        <div class="featured-media">
+          <img src="${esc(p.image || `assets/images/${p.name}.png`)}" alt="${esc(p.title)} preview" loading="lazy" width="800" height="500" />
+        </div>
         <div class="featured-number">0${i + 1}</div>
         <p class="project-category">${esc(p.category)}</p>
         <h3>${esc(p.title)}</h3>
@@ -162,6 +165,9 @@
         <a class="btn btn-ghost btn-sm" href="${esc(p.repo)}" target="_blank" rel="noopener">Explore project ${ICONS.live}</a>
       </article>
     `).join('');
+    featuredGrid.querySelectorAll('img').forEach((img, i) => {
+      img.addEventListener('error', () => { img.src = placeholder(data.filter((p) => p.featured)[i], i); }, { once: true });
+    });
   }
 
   // Render all cards once; filtering only toggles visibility.
