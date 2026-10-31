@@ -153,7 +153,7 @@
   const featuredGrid = $('#featured-grid');
   if (featuredGrid) {
     featuredGrid.innerHTML = data.filter((p) => p.featured).slice(0, 3).map((p, i) => `
-      <article class="card featured-card reveal">
+      <article class="card featured-card">
         <div class="featured-number">0${i + 1}</div>
         <p class="project-category">${esc(p.category)}</p>
         <h3>${esc(p.title)}</h3>
@@ -162,7 +162,6 @@
         <a class="btn btn-ghost btn-sm" href="${esc(p.repo)}" target="_blank" rel="noopener">Explore project ${ICONS.live}</a>
       </article>
     `).join('');
-    observeReveal(featuredGrid.querySelectorAll('.reveal'));
   }
 
   // Render all cards once; filtering only toggles visibility.
