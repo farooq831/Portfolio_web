@@ -16,6 +16,37 @@
     set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* storage blocked */ } }
   };
 
+  /* ---------- Hero typewriter ---------- */
+  const typewriter = $('#typewriter-text');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (typewriter) {
+    const phrases = ['Muhammad Farooq', 'an IT Graduate', 'a Full-Stack Developer'];
+    if (reduceMotion) {
+      typewriter.textContent = phrases[0];
+    } else {
+      let phraseIndex = 0;
+      let characterIndex = 0;
+      let deleting = false;
+      const type = () => {
+        const phrase = phrases[phraseIndex];
+        characterIndex += deleting ? -1 : 1;
+        typewriter.textContent = phrase.slice(0, characterIndex);
+        let delay = deleting ? 45 : 85;
+        if (!deleting && characterIndex === phrase.length) {
+          deleting = true;
+          delay = 1800;
+        } else if (deleting && characterIndex === 0) {
+          deleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          delay = 400;
+        }
+        window.setTimeout(type, delay);
+      };
+      typewriter.textContent = '';
+      window.setTimeout(type, 500);
+    }
+  }
+
   /* ---------- Theme toggle ---------- */
   const themeBtn = $('#theme-toggle');
   const setTheme = (theme) => {

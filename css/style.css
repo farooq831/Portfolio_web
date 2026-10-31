@@ -186,6 +186,10 @@ svg.fill { fill: currentColor; stroke: none; }
 .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 0 0 rgba(34, 197, 94, .6); animation: pulse 2s infinite; }
 @keyframes pulse { 70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); } 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); } }
 .hero h1 { font-size: clamp(2.4rem, 7vw, 4.6rem); letter-spacing: -.035em; margin-bottom: .25em; }
+.typewriter-heading { min-height: 2.2em; }
+.typewriter-text { display: inline-block; min-width: 10ch; }
+.typewriter-cursor { display: inline-block; margin-left: .08em; color: var(--accent-2); animation: cursor-blink .8s step-end infinite; }
+@keyframes cursor-blink { 50% { opacity: 0; } }
 .hero-title { font-family: var(--font-head); font-size: clamp(1.1rem, 2.6vw, 1.5rem); font-weight: 500; color: var(--accent-2); margin-bottom: 1em; }
 .achievement-pill {
   display: inline-flex; align-items: center; gap: .55em; margin: -.25em 0 1.35em; padding: .5em .95em;
