@@ -52,7 +52,10 @@
   <!-- ───────── Header ───────── -->
   <header class="site-header" id="top">
     <nav class="nav container" aria-label="Main">
-      <a href="#top" class="logo" aria-label="Muhammad Farooq, home">FAROOQ<span>.</span></a>
+      <a href="#top" class="logo" aria-label="Muhammad Farooq, home">
+        <img src="assets/img/profile.png" alt="" width="34" height="34" />
+        <span class="logo-name">FAROOQ<span>.</span></span>
+      </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
@@ -75,6 +78,7 @@
     <section class="hero">
       <div class="hero-bg" aria-hidden="true">
         <div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div>
+        <span class="hero-particle particle-one"></span><span class="hero-particle particle-two"></span><span class="hero-particle particle-three"></span>
         <div class="grid-overlay"></div>
       </div>
       <div class="container hero-inner">
@@ -260,7 +264,7 @@
             <textarea id="cf-message" name="message" rows="5" required></textarea>
           </div>
           <button type="submit" class="btn btn-primary btn-block">Send message</button>
-          <p class="form-note" id="form-note" role="status">This opens your email app with the message ready to send.</p>
+          <p class="form-note" id="form-note" role="status">Your message will open in WhatsApp.</p>
         </form>
       </div>
     </section>

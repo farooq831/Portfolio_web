@@ -238,9 +238,10 @@
   modal.addEventListener('click', (e) => { if (e.target === modal) closeVideo(); });
   modal.addEventListener('cancel', (e) => { e.preventDefault(); closeVideo(); });
 
-  /* ---------- Contact form (opens the visitor's email app) ---------- */
+  /* ---------- Contact form (opens WhatsApp) ---------- */
   const form = $('#contact-form');
   const note = $('#form-note');
+  const whatsappNumber = ''; // Add your international number, e.g. 923001234567.
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     let ok = true;
@@ -252,10 +253,12 @@
     if (!ok) { note.textContent = 'Please fill in all fields with a valid email.'; return; }
 
     const name = $('#cf-name').value.trim();
-    const subject = encodeURIComponent(`Portfolio enquiry from ${name}`);
-    const body = encodeURIComponent(`${$('#cf-message').value.trim()}\n\n${name}\n${$('#cf-email').value.trim()}`);
-    window.location.href = `mailto:muhammadfarooq904011@gmail.com?subject=${subject}&body=${body}`;
-    note.textContent = 'Opening your email app… If nothing happens, email me directly at muhammadfarooq904011@gmail.com.';
+    const message = encodeURIComponent(`Hello Muhammad, I am ${name}.\n\n${$('#cf-message').value.trim()}\n\nMy email: ${$('#cf-email').value.trim()}`);
+    const destination = whatsappNumber ? `https://wa.me/${whatsappNumber}?text=${message}` : `https://wa.me/?text=${message}`;
+    window.open(destination, '_blank', 'noopener');
+    note.textContent = whatsappNumber
+      ? 'Opening WhatsApp with your message ready to send…'
+      : 'Opening WhatsApp. Add your WhatsApp number in js/main.js for direct chat routing.';
   });
 
   /* ---------- Footer year ---------- */
