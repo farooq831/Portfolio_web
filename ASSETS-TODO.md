@@ -34,12 +34,13 @@ These come from the repos' own images or were auto-captured. Swap in better ones
 | `assets/images/automated-malware-analysis-forensics.png` | Upload page. A results/report page would look stronger |
 | `assets/images/Random-Dice-Roller.png`, `Simon-Game-Clone-.png`, `OTPgenerator.png`, `social-media-menu.png` | Auto-captured and fairly plain |
 
-## 3. Demo videos still needed (22)
+## 3. Demo videos still needed (23)
 
 Already included: `exam-question-bank.mp4`, `goodhand-marketplace.mp4`, `automated-malware-analysis-forensics.mp4`, `English-Dictionary.mp4`, `Temperature-converter.mp4`.
 
 **Highest priority** (these projects impress recruiters most):
 
+- [ ] `assets/videos/Book_Selling_System.mp4`: create an order, show printing progress, receipt and reporting workflow
 - [ ] `assets/videos/skans-school-website.mp4`: website, then admin panel (add a news post, edit fees)
 - [ ] `assets/videos/YT_Playlist_Downloader.mp4`: paste a playlist, load it, start a download, pause/resume
 - [ ] `assets/videos/hassan-marble-tiles.mp4`: scroll the site, switch EN ↔ Urdu, open the gallery lightbox

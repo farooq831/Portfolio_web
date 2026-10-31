@@ -20,6 +20,19 @@
  */
 const PROJECTS = [
   {
+    "name": "Book_Selling_System",
+    "title": "SKANS Book Selling System",
+    "description": "Campus-scoped counter system for recording student book orders, payments, printing progress, vendor activity, handovers and financial reporting across VU campuses.",
+    "category": "Full-Stack",
+    "tech": ["React", "Vite", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "Knex", "Zod", "Playwright", "Vitest"],
+    "repo": "https://github.com/farooq831/Book_Selling_System",
+    "live": "",
+    "image": "assets/images/Book_Selling_System.png",
+    "video": "assets/videos/Book_Selling_System.mp4",
+    "featured": true,
+    "impact": "Role-based campus workflow with order tracking, receipts, accounting reports and automated tests."
+  },
+  {
     "name": "exam-question-bank",
     "title": "Exam Question Bank & Paper Builder",
     "description": "Full-stack system where teachers write questions, admins review them, and approved questions become print-ready CAF-style question papers and answer keys as PDF. In beta use at SKANS School of Accountancy, with 127 tests and 99 security checks.",

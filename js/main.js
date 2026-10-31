@@ -152,7 +152,7 @@
 
   const featuredGrid = $('#featured-grid');
   if (featuredGrid) {
-    featuredGrid.innerHTML = data.filter((p) => p.featured).slice(0, 3).map((p, i) => `
+    featuredGrid.innerHTML = data.filter((p) => p.featured).slice(0, 4).map((p, i) => `
       <article class="card featured-card">
         <div class="featured-media">
           <img src="${esc(p.image || `assets/images/${p.name}.png`)}" alt="${esc(p.title)} preview" loading="lazy" width="800" height="500" />
