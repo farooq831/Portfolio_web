@@ -22,8 +22,6 @@ File names are **case-sensitive** on GitHub Pages. Copy them exactly as written 
 | `assets/images/Password-gererator-react.png` | Password Generator | Generator with a password showing |
 | `assets/images/Food-Ordering-System-DSA.png` | Food Ordering System (C++) | Console menu, cart and order queue |
 | `assets/images/leetcode-python.png` | LeetCode Python | Optional: a solution file, or leave the placeholder |
-| `assets/images/react.png` | React Practice Repository | A representative component or exercise |
-| `assets/images/react-code.png` | React Code Practice | A representative component or exercise |
 
 ## 2. Screenshots worth replacing (optional)
 
@@ -65,8 +63,6 @@ Already included: `exam-question-bank.mp4`, `goodhand-marketplace.mp4`, `automat
 - [ ] `assets/videos/OTPgenerator.mp4`
 - [ ] `assets/videos/Food-Ordering-System-DSA.mp4`
 - [ ] `assets/videos/leetcode-python.mp4` (can be skipped)
-- [ ] `assets/videos/react.mp4` (can be skipped)
-- [ ] `assets/videos/react-code.mp4` (can be skipped)
 
 ## Tips
 

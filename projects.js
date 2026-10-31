@@ -154,26 +154,6 @@ const PROJECTS = [
     "featured": false
   },
   {
-    "name": "react",
-    "title": "React Practice Repository",
-    "description": "Small React learning exercises and starter experiments from the early stage of my frontend development journey.",
-    "category": "React",
-    "tech": ["React", "JavaScript"],
-    "repo": "https://github.com/farooq831/react",
-    "live": "",
-    "featured": false
-  },
-  {
-    "name": "react-code",
-    "title": "React Code Practice",
-    "description": "Compact React practice repository containing early component and JavaScript experiments.",
-    "category": "React",
-    "tech": ["React", "JavaScript"],
-    "repo": "https://github.com/farooq831/react-code",
-    "live": "",
-    "featured": false
-  },
-  {
     "name": "Ludoogame",
     "title": "Dice Game",
     "description": "React dice game: pick a number, roll the dice and score points when they match. Includes a rules panel and score reset.",
