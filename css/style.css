@@ -175,6 +175,12 @@ svg.fill { fill: currentColor; stroke: none; }
 @keyframes pulse { 70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); } 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); } }
 .hero h1 { font-size: clamp(2.4rem, 7vw, 4.6rem); letter-spacing: -.035em; margin-bottom: .25em; }
 .hero-title { font-family: var(--font-head); font-size: clamp(1.1rem, 2.6vw, 1.5rem); font-weight: 500; color: var(--accent-2); margin-bottom: 1em; }
+.achievement-pill {
+  display: inline-flex; align-items: center; gap: .55em; margin: -.25em 0 1.35em; padding: .5em .95em;
+  border: 1px solid rgba(245, 158, 11, .38); border-radius: 999px; color: #fbbf24; background: rgba(245, 158, 11, .1);
+  box-shadow: 0 8px 26px -16px rgba(245, 158, 11, .9); font-size: .9rem; font-weight: 600;
+}
+.achievement-pill span { color: #f59e0b; }
 .hero-lead { font-size: clamp(1rem, 1.8vw, 1.15rem); color: var(--text-muted); max-width: 680px; margin-inline: auto; margin-bottom: 2em; }
 .hero-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 3em; }
 .hero-stats { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
@@ -287,6 +293,11 @@ svg.fill { fill: currentColor; stroke: none; }
 .timeline-date { display: inline-block; font-size: .8rem; font-weight: 600; padding: .25em .8em; border-radius: 999px; background: var(--surface-strong); border: 1px solid var(--border); color: var(--accent-2); margin-bottom: .8em; }
 .timeline-card h3 { font-size: 1.25rem; }
 .timeline-place { color: var(--text-muted); font-weight: 500; }
+.academic-achievement {
+  display: inline-flex; align-items: center; gap: .45em; margin: .25em 0 1.15em; padding: .55em .85em;
+  border-left: 3px solid #f59e0b; border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: #fbbf24 !important; background: rgba(245, 158, 11, .09);
+}
 .timeline-card p:last-child { margin-bottom: 0; color: var(--text-muted); }
 .timeline-card strong { color: var(--text); }
 
