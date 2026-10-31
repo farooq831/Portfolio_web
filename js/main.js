@@ -109,10 +109,23 @@
     live: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>',
     play: '<svg viewBox="0 0 24 24" aria-hidden="true" class="fill"><path d="M7 4v16l13-8z"/></svg>'
   };
+  const TECH_ICONS = {
+    'HTML': 'html5', 'CSS': 'css3', 'JavaScript': 'javascript', 'TypeScript': 'typescript',
+    'React': 'react', 'Vite': 'vitejs', 'Tailwind CSS': 'tailwindcss', 'Node.js': 'nodejs',
+    'Express': 'express', 'PHP': 'php', 'Python': 'python', 'C++': 'cplusplus',
+    'Flask': 'flask', 'MongoDB': 'mongodb', 'PostgreSQL': 'postgresql', 'MySQL': 'mysql',
+    'Prisma': 'prisma', 'scikit-learn': 'scikitlearn', 'Bootstrap': 'bootstrap'
+  };
+  const techIcon = (tech) => {
+    const slug = TECH_ICONS[tech];
+    if (!slug) return '';
+    const mark = tech.replace(/[^A-Za-z0-9]/g, '').slice(0, 2).toUpperCase();
+    return `<span class="tech-mark" aria-hidden="true">${mark}</span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${slug}/${slug}-original.svg" alt="" loading="lazy" onload="this.previousElementSibling.hidden=true" onerror="this.hidden=true" />`;
+  };
 
   function cardHTML(p) {
     const img = p.image || `assets/images/${p.name}.png`;
-    const tags = (p.tech || []).map((t) => `<li class="tag">${esc(t)}</li>`).join('');
+    const tags = (p.tech || []).map((t) => `<li class="tag">${techIcon(t)}<span>${esc(t)}</span></li>`).join('');
     const live = p.live
       ? `<a class="btn btn-ghost btn-sm" href="${esc(p.live)}" target="_blank" rel="noopener">${ICONS.live}${esc(p.liveLabel || 'Live Demo')}</a>`
       : '';
@@ -135,6 +148,21 @@
           </div>
         </div>
       </article>`;
+  }
+
+  const featuredGrid = $('#featured-grid');
+  if (featuredGrid) {
+    featuredGrid.innerHTML = data.filter((p) => p.featured).slice(0, 3).map((p, i) => `
+      <article class="card featured-card reveal">
+        <div class="featured-number">0${i + 1}</div>
+        <p class="project-category">${esc(p.category)}</p>
+        <h3>${esc(p.title)}</h3>
+        <p>${esc(p.description)}</p>
+        ${p.impact ? `<p class="project-impact"><span>Impact</span>${esc(p.impact)}</p>` : ''}
+        <a class="btn btn-ghost btn-sm" href="${esc(p.repo)}" target="_blank" rel="noopener">Explore project ${ICONS.live}</a>
+      </article>
+    `).join('');
+    observeReveal(featuredGrid.querySelectorAll('.reveal'));
   }
 
   // Render all cards once; filtering only toggles visibility.
@@ -241,7 +269,7 @@
   /* ---------- Contact form (opens WhatsApp) ---------- */
   const form = $('#contact-form');
   const note = $('#form-note');
-  const whatsappNumber = ''; // Add your international number, e.g. 923001234567.
+  const whatsappNumber = '923438805832';
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     let ok = true;

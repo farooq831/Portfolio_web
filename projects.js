@@ -27,7 +27,8 @@ const PROJECTS = [
     "tech": ["React", "TypeScript", "Vite", "Tailwind CSS", "Node.js", "Express", "Prisma", "PostgreSQL", "Playwright"],
     "repo": "https://github.com/farooq831/exam-question-bank",
     "live": "",
-    "featured": true
+    "featured": true,
+    "impact": "Beta-ready workflow with 127 automated tests and 99 security checks."
   },
   {
     "name": "goodhand-marketplace",
@@ -37,7 +38,8 @@ const PROJECTS = [
     "tech": ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB", "Socket.io", "Stripe", "JWT", "Vitest"],
     "repo": "https://github.com/farooq831/goodhand-marketplace",
     "live": "",
-    "featured": true
+    "featured": true,
+    "impact": "End-to-end marketplace experience covering booking, escrow, chat and disputes."
   },
   {
     "name": "automated-malware-analysis-forensics",
@@ -47,7 +49,8 @@ const PROJECTS = [
     "tech": ["Python", "Flask", "LightGBM", "XGBoost", "scikit-learn", "LIME", "Volatility 3", "SQLAlchemy"],
     "repo": "https://github.com/farooq831/automated-malware-analysis-forensics",
     "live": "",
-    "featured": true
+    "featured": true,
+    "impact": "Final Year Project combining ML explainability, memory forensics and MITRE ATT&CK mapping."
   },
   {
     "name": "skans-school-website",
